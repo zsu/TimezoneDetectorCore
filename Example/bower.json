@@ -1,0 +1,8 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "jstz-detect": "1.0.5",
+    "cookies-js": "1.2.3"
+  }
+}
