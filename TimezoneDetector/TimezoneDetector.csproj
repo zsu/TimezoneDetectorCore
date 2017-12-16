@@ -3,14 +3,16 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageId>TimezoneDetectorCore</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>Zhicheng Su</Authors>
-    <Description>>An asp.net core library for browser timezone detection. Provide simple way to detect browser timezone and display browser time.</Description>
+    <Description>An asp.net core library for browser timezone detection. Provide simple way to detect browser timezone and display browser time.</Description>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/zsu/TimezoneDetectorCore</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2017 Zhicheng Su</Copyright>
     <PackageTags>asp.net core, htmlhelper</PackageTags>
+    <Version>1.0.1</Version>
+    <RepositoryUrl>https://github.com/zsu/TimezoneDetectorCore</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
