@@ -18,8 +18,6 @@ Razor:
 ...
 //After JQuery reference
 @Html.TimezoneDetector()
-  * Call dateTimeService.ToClientTime(DateTime.Now, "yyyy-MM-dd") to get browser time;
-
 ```
   * Link to Jquery/cookies-js/jstz on your page: 
 ```xml
@@ -27,5 +25,7 @@ Razor:
     <script src="https://fastcdn.org/Cookies.js/1.2.2/cookies.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
 ```
+  * Call dateTimeService.ToClientTime(DateTime.Now, "yyyy-MM-dd") to get browser time;
+
 # License
 All source code is licensed under MIT license - http://www.opensource.org/licenses/mit-license.php
