@@ -20,6 +20,7 @@ Razor:
 ```
 ```xml
 Razor:
+//After JQuery reference
 @Html.TimezoneDetector()
 
 ```
