@@ -8,12 +8,12 @@ using System.Net;
 
 namespace TimezoneDetector
 {
-    public class DateTimeService : IDateTimeService
+    public class TimezoneDetectorService : ITimezoneDetectorService
     {
         public const string COOKIE_KEY_TIME_ZONE_ID = "timezoneid";
         private static IHttpContextAccessor _httpContextAccessor;
         private readonly ILogger _logger;
-        public DateTimeService(IHttpContextAccessor httpContextAccessor, ILogger<DateTimeService> logger)
+        public TimezoneDetectorService(IHttpContextAccessor httpContextAccessor, ILogger<TimezoneDetectorService> logger)
         {
             _httpContextAccessor = httpContextAccessor;
             _logger = logger;

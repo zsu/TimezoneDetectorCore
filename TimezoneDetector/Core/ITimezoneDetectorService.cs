@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TimezoneDetector
 {
-    public interface IDateTimeService
+    public interface ITimezoneDetectorService
     {
         string ToClientTime(DateTime dt);
         string ToClientTime(DateTime dt, string format);

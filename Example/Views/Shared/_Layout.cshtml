@@ -1,4 +1,4 @@
-﻿@inject TimezoneDetector.IDateTimeService dateTimeService
+﻿@inject TimezoneDetector.ITimezoneDetectorService timezoneDetectorService
 @inject Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnv
 @using TimezoneDetector
 <!DOCTYPE html>
@@ -45,7 +45,7 @@
         <hr />
         <footer>
             &copy; @DateTime.Now.Year - ZSU
-            <span class="pull-right"><span class="buildinfo">@hostingEnv.EnvironmentName @dateTimeService.ToClientTime(System.IO.File.GetLastWriteTimeUtc(System.Reflection.Assembly.GetEntryAssembly().Location), "yyyy-MM-dd")</span> @RenderSection("footerright", required: false)</span>
+            <span class="pull-right"><span class="buildinfo">@hostingEnv.EnvironmentName @timezoneDetectorService.ToClientTime(System.IO.File.GetLastWriteTimeUtc(System.Reflection.Assembly.GetEntryAssembly().Location), "yyyy-MM-dd")</span> @RenderSection("footerright", required: false)</span>
         </footer>
     </div>
 
