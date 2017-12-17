@@ -12,13 +12,15 @@ namespace TimezoneDetector
 
         public static IServiceCollection AddTimezoneDetector(this IServiceCollection services)
         {
+            IServiceCollection col=services;
             if (services == null)
             {
                 throw new ArgumentNullException(nameof(services));
             }
-            var col = services.AddSingleton<ITimezoneDetectorService, TimezoneDetectorService>();
-            //if(services.FirstOrDefault(d => d.ServiceType == typeof(IHttpContextAccessor))==null)
-            //    col = services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            if (services.FirstOrDefault(d => d.ServiceType == typeof(ITimezoneDetectorService)) == null)
+                col = services.AddSingleton<ITimezoneDetectorService, TimezoneDetectorService>();
+            if (services.FirstOrDefault(d => d.ServiceType == typeof(IHttpContextAccessor)) == null)
+                col = services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             return col;
         }
     }
