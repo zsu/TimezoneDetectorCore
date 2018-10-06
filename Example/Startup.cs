@@ -48,6 +48,7 @@ namespace Exmaple
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseTimezoneDetector();
         }
     }
 }

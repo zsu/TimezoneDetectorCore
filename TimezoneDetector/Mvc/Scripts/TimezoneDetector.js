@@ -1,22 +1,5 @@
-﻿using System.IO;
-using System.Text;
-using System.Text.Encodings.Web;
-using Microsoft.AspNetCore.Html;
-
-namespace TimezoneDetector
-{
-    public class TimezoneDetectorControl : IHtmlContent
-    {
-        public void WriteTo(TextWriter writer, HtmlEncoder encoder)
-        {
-            writer.Write(RenderScript());
-        }
-		private string RenderScript()
-		{
-			StringBuilder scripts = new StringBuilder();
-			scripts.AppendLine("<script type='text/javascript'>");
-			scripts.AppendLine(@"$().ready(function () {
-	setTimezoneCookie();
+﻿$().ready(function () {
+    setTimezoneCookie();
 });
 function setTimezoneCookie() {
 
@@ -54,20 +37,5 @@ function setTimezoneCookie() {
             Cookies(timezone_cookie, currentTimezone, { path: '/' });
             location.reload();
         }
-    }
-}");
-			scripts.AppendLine("</script>");
-			return scripts.ToString();
-		}
-		public override string ToString()
-		{
-			var content = new StringBuilder();
-			content.AppendLine(RenderScript());
-			return content.ToString();
-		}
-		public string ToHtmlString()
-		{
-			return ToString();
-		}
     }
 }

@@ -3,20 +3,40 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>TimezoneDetectorCore</PackageId>
-    <PackageVersion>1.0.3</PackageVersion>
+    <PackageVersion>1.1.0</PackageVersion>
     <Authors>Zhicheng Su</Authors>
     <Description>An asp.net core library for browser timezone detection. Provide simple way to detect browser timezone and display browser time.</Description>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/zsu/TimezoneDetectorCore</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2017 Zhicheng Su</Copyright>
-    <PackageTags>asp.net core, htmlhelper</PackageTags>
-    <Version>1.0.2</Version>
+    <PackageTags>asp.net core,  timezone detection</PackageTags>
+    <Version>1.1.0</Version>
     <RepositoryUrl>https://github.com/zsu/TimezoneDetectorCore</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.0.1" />
+    <Compile Remove="Mvc\TimezoneDetectorControl.cs" />
+    <Compile Remove="Mvc\TimezoneDetectorHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Mvc\Scripts\TimezoneDetector.js" />
+    <None Remove="Mvc\Scripts\TimezoneDetector.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Mvc\Scripts\TimezoneDetector.js" />
+    <EmbeddedResource Include="Mvc\Scripts\TimezoneDetector.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.8.391">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.1.1" />
     <PackageReference Include="NodaTime" Version="2.2.3" />
   </ItemGroup>
 

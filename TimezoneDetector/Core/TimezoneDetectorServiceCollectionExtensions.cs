@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace TimezoneDetector
 {
@@ -21,6 +22,8 @@ namespace TimezoneDetector
                 col = services.AddSingleton<ITimezoneDetectorService, TimezoneDetectorService>();
             if (services.FirstOrDefault(d => d.ServiceType == typeof(IHttpContextAccessor)) == null)
                 col = services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            if (services.FirstOrDefault(d => d.ServiceType == typeof(IActionContextAccessor)) == null)
+                col = services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             return col;
         }
     }

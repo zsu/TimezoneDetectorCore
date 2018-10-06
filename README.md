@@ -3,28 +3,30 @@
 TimezoneDetector is an asp.net core library for browser timezone detection. It provides a simple way to detect browser timezone and display browser time.
 
 # Nuget
-~~~xml
+```xml
   Install-Package TimezoneDetectorCore
-~~~
+```
 
 # Getting started with TimezoneDetector
-  * Reference TimezoneDetector.dll
-  * Inject IDateTimeService
-  * Use it on your page;
-```xml
+  * Call the followings in Startup:  
+  ```xml
+  * services.AddTimezoneDetector();
+  * app.UseTimezoneDetector();
+  ```
 Razor:
-@inject TimezoneDetector.IDateTimeService dateTimeService
-@using TimezoneDetector
-...
-//After JQuery reference
-@Html.TimezoneDetector()
-```
+  * Add @addTagHelper *, TimezoneDetector to _ViewImports.cshtml
   * Link to Jquery/cookies-js/jstz on your page: 
-```xml
+  ```xml
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
     <script src="https://fastcdn.org/Cookies.js/1.2.2/cookies.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
-```
+  ```
+  * Insert <timezonedetector /> after reference to jquery/cookies-js/jstz;
+  *Use it on the page:
+  ```xml
+  @inject TimezoneDetector.IDateTimeService dateTimeService
+  @using TimezoneDetector
+  ```
   * Call dateTimeService.ToClientTime(DateTime.Now, "yyyy-MM-dd") to get browser time;
 
 # License
