@@ -15,10 +15,10 @@ TimezoneDetector is an asp.net core library for browser timezone detection. It p
   ```
 Razor:
   * Add @addTagHelper *, TimezoneDetector to _ViewImports.cshtml
-  * Link to Jquery/cookies-js/jstz on your page: 
+  * Link to Jquery/js-cookies/jstz on your page: 
   ```xml
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-    <script src="https://fastcdn.org/Cookies.js/1.2.2/cookies.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
   ```
   * Insert <timezonedetector /> after reference to jquery/cookies-js/jstz;
