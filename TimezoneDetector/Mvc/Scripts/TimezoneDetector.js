@@ -6,7 +6,7 @@ function setTimezoneCookie() {
     var timezone_cookie = 'timezoneid';
 
     // if the timezone cookie not exists create one.
-    if (!Cookies(timezone_cookie)) {
+    if (!Cookies.get(timezone_cookie)) {
 
         //// check if the browser supports cookie
         //var test_cookie = 'test cookie';
@@ -19,7 +19,7 @@ function setTimezoneCookie() {
         //$.cookie(test_cookie, null);
 
         // create a new cookie
-        Cookies(timezone_cookie, jstz.determine().name(), { path: '/' });
+        Cookies.set(timezone_cookie, jstz.determine().name(), { path: '/' });
 
         // re-load the page
         location.reload();
@@ -29,12 +29,12 @@ function setTimezoneCookie() {
     // then store the new timezone in the cookie and refresh the page.
     else {
 
-        var storedTimezone = Cookies(timezone_cookie);
+        var storedTimezone = Cookies.get(timezone_cookie);
         var currentTimezone = jstz.determine().name();
 
         // user may have changed the timezone
         if (storedTimezone !== currentTimezone) {
-            Cookies(timezone_cookie, currentTimezone, { path: '/' });
+            Cookies.set(timezone_cookie, currentTimezone, { path: '/' });
             location.reload();
         }
     }
