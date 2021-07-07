@@ -10,7 +10,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2017 Zhicheng Su</Copyright>
     <PackageTags>asp.net core,  timezone detection</PackageTags>
-    <Version>1.1.1</Version>
+    <Version>1.2.1</Version>
     <RepositoryUrl>https://github.com/zsu/TimezoneDetectorCore</RepositoryUrl>
   </PropertyGroup>
 
