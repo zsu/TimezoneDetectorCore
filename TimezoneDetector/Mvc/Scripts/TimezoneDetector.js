@@ -19,7 +19,7 @@ function setTimezoneCookie() {
         //$.cookie(test_cookie, null);
 
         // create a new cookie
-        Cookies(timezone_cookie, jstz.determine().name(), { path: '/' });
+        Cookies(timezone_cookie, jstz.determine().name(), { path: '/',secure: true });
 
         // re-load the page
         location.reload();
@@ -34,7 +34,7 @@ function setTimezoneCookie() {
 
         // user may have changed the timezone
         if (storedTimezone !== currentTimezone) {
-            Cookies(timezone_cookie, currentTimezone, { path: '/' });
+            Cookies(timezone_cookie, currentTimezone, { path: '/', secure: true });
             location.reload();
         }
     }
