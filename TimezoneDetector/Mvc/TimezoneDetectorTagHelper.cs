@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Microsoft.Extensions.Hosting;
 
 namespace TimezoneDetector
 {
@@ -11,9 +12,9 @@ namespace TimezoneDetector
     public class TimezoneDetectorTagHelper : TagHelper
     {
         private IUrlHelperFactory _urlHelper;
-        private IHostingEnvironment _hostingEnvironment;
+        private IHostEnvironment _hostingEnvironment;
         private IActionContextAccessor _actionContextAccessor;
-        public TimezoneDetectorTagHelper(IHostingEnvironment hostingEnvironment, IUrlHelperFactory urlHelper, IActionContextAccessor actionContextAccessor)
+        public TimezoneDetectorTagHelper(IHostEnvironment hostingEnvironment, IUrlHelperFactory urlHelper, IActionContextAccessor actionContextAccessor)
         {
             _hostingEnvironment = hostingEnvironment;
             _urlHelper = urlHelper;
