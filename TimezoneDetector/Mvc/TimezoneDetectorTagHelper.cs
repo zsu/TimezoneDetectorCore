@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -12,11 +11,9 @@ namespace TimezoneDetector
     public class TimezoneDetectorTagHelper : TagHelper
     {
         private IUrlHelperFactory _urlHelper;
-        private IHostEnvironment _hostingEnvironment;
         private IActionContextAccessor _actionContextAccessor;
-        public TimezoneDetectorTagHelper(IHostEnvironment hostingEnvironment, IUrlHelperFactory urlHelper, IActionContextAccessor actionContextAccessor)
+        public TimezoneDetectorTagHelper(IUrlHelperFactory urlHelper, IActionContextAccessor actionContextAccessor)
         {
-            _hostingEnvironment = hostingEnvironment;
             _urlHelper = urlHelper;
             _actionContextAccessor = actionContextAccessor;
          }
@@ -40,7 +37,7 @@ namespace TimezoneDetector
 		{
 			StringBuilder scripts = new StringBuilder();
             var scriptPath = _urlHelper.GetUrlHelper(_actionContextAccessor.ActionContext).Content("~");
-            scripts.AppendFormat("<script type='text/javascript' src='{0}/timezonedetector/Mvc/Scripts/TimezoneDetector{1}.js'></script>", scriptPath, _hostingEnvironment.IsDevelopment() ? "" : ".min");
+            scripts.AppendFormat("<script type='text/javascript' src='{0}/timezonedetector/Mvc/Scripts/TimezoneDetector{1}.js'></script>", scriptPath, ".min");
 
             return scripts.ToString();
 		}
