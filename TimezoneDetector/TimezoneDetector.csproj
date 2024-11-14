@@ -10,7 +10,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2017 Zhicheng Su</Copyright>
     <PackageTags>asp.net core,  timezone detection</PackageTags>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <RepositoryUrl>https://github.com/zsu/TimezoneDetectorCore</RepositoryUrl>
   </PropertyGroup>
 
@@ -37,7 +37,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Runtime" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="NodaTime" Version="3.1.4" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
   </ItemGroup>
 
 </Project>
