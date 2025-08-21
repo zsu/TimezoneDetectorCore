@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>TimezoneDetectorCore</PackageId>
     <Authors>Zhicheng Su</Authors>
     <Description>An asp.net core library for browser timezone detection. Provide simple way to detect browser timezone and display browser time.</Description>
@@ -10,12 +10,9 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright 2017 Zhicheng Su</Copyright>
     <PackageTags>asp.net core,  timezone detection</PackageTags>
-    <Version>3.0.0</Version>
+    <Version>4.0.0</Version>
     <RepositoryUrl>https://github.com/zsu/TimezoneDetectorCore</RepositoryUrl>
   </PropertyGroup>
-	<ItemGroup>
-		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-	</ItemGroup>
   <ItemGroup>
     <Compile Remove="Mvc\TimezoneDetectorControl.cs" />
     <Compile Remove="Mvc\TimezoneDetectorHelper.cs" />
@@ -32,10 +29,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="NodaTime" Version="3.1.4" />
-    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.0" />
+    <PackageReference Include="NodaTime" Version="2.4.7" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="4.7.2" />
   </ItemGroup>
 
 </Project>
